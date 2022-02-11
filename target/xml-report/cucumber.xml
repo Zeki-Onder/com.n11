@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="4" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="194.084">
+    <testcase classname="System should allow that user to login" name="System should allow login with correct username and password" time="72.529">
+        <system-out>
+            <![CDATA[Given User goes to "N11Url" page............................................passed
+Then Opens the Login page...................................................passed
+Given User enters "email" and "password"....................................passed
+Then User clicks login button...............................................passed
+And User verifies login.....................................................passed
+Then User closes the page...................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="System should allow that user to login" name="System should not allow login with incorrect username or password" time="22.876">
+        <failure message="Keys to send should be a not null CharSequence" type="java.lang.IllegalArgumentException">
+            <![CDATA[Given User goes to "N11Url" page............................................passed
+Then Opens the Login page...................................................passed
+Given User enters "asdf@asfasf.com" and "Qwerty654321"......................failed
+Then User clicks login button...............................................skipped
+And User verifies login failed..............................................skipped
+Then User closes the page...................................................skipped
+
+StackTrace:
+java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:92)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy22.sendKeys(Unknown Source)
+	at stepdefinitions.N11StepdDefinition.userEntersAnd(N11StepdDefinition.java:35)
+	at ✽.User enters "asdf@asfasf.com" and "Qwerty654321"(file:///C:/Users/Zeki%20Önder/Desktop/Repository/com.n11/src/test/resources/features/N11.feature:17)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="System should allow that user to login" name="System should not allow login with incorrect username or password 2" time="13.354">
+        <failure message="Keys to send should be a not null CharSequence" type="java.lang.IllegalArgumentException">
+            <![CDATA[Given User goes to "N11Url" page............................................passed
+Then Opens the Login page...................................................passed
+Given User enters "test_onder@outlook.com" and "125412541254"...............failed
+Then User clicks login button...............................................skipped
+And User verifies login failed..............................................skipped
+Then User closes the page...................................................skipped
+
+StackTrace:
+java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:92)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy22.sendKeys(Unknown Source)
+	at stepdefinitions.N11StepdDefinition.userEntersAnd(N11StepdDefinition.java:35)
+	at ✽.User enters "test_onder@outlook.com" and "125412541254"(file:///C:/Users/Zeki%20Önder/Desktop/Repository/com.n11/src/test/resources/features/N11.feature:17)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="System should allow that user to login" name="System should not allow login with incorrect username or password 3" time="9.739">
+        <failure message="Keys to send should be a not null CharSequence" type="java.lang.IllegalArgumentException">
+            <![CDATA[Given User goes to "N11Url" page............................................passed
+Then Opens the Login page...................................................passed
+Given User enters "asdf@asfasf.com" and "125412541254"......................failed
+Then User clicks login button...............................................skipped
+And User verifies login failed..............................................skipped
+Then User closes the page...................................................skipped
+
+StackTrace:
+java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:92)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy22.sendKeys(Unknown Source)
+	at stepdefinitions.N11StepdDefinition.userEntersAnd(N11StepdDefinition.java:35)
+	at ✽.User enters "asdf@asfasf.com" and "125412541254"(file:///C:/Users/Zeki%20Önder/Desktop/Repository/com.n11/src/test/resources/features/N11.feature:17)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="System should allow that user to login" name="Warning messages should be displayed when logging in with an invalid email or password" time="12.722">
+        <system-out>
+            <![CDATA[Given User goes to "N11Url" page............................................passed
+Then Opens the Login page...................................................passed
+Given User enters "invalidEmail" at the email textbox and verifies that invalid email warning message is displayed.passed
+Then User enters "invalidPassword" at the password textbox and verifies that invalid password warning message is displayed.passed
+Then User closes the page...................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="System should allow that user to login" name="If user logs in successfully, the home page should open and username should be displayed on the Homepage." time="62.233">
+        <failure message="Unable to locate element: //*[@class='menuLink user']&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.1.1', revision: 'e8fcc2cecf'&#10;System info: host: 'ZEKI_ONDER', ip: '192.168.0.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'&#10;Driver info: org.openqa.selenium.firefox.FirefoxDriver&#10;Command: [ab9372a1-3d63-4ab4-a51a-de2505adba73, findElement {using=xpath, value=//*[@class='menuLink user']}]&#10;Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 97.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220202182137, moz:debuggerAddress: localhost:51615, moz:geckodriverVersion: 0.30.0, moz:headless: false, moz:processID: 21988, moz:profile: C:\Users\Zeki Önder\AppData..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:51615/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}&#10;Session ID: ab9372a1-3d63-4ab4-a51a-de2505adba73" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[Given User goes to "N11Url" page............................................passed
+Then Opens the Login page...................................................passed
+Given User enters "email" and "password"....................................passed
+Then User clicks login button...............................................passed
+Then User verifies that the homepage is opened and the username is displayed.failed
+And User closes the page....................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: Unable to locate element: //*[@class='menuLink user']
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'ZEKI_ONDER', ip: '192.168.0.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [ab9372a1-3d63-4ab4-a51a-de2505adba73, findElement {using=xpath, value=//*[@class='menuLink user']}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 97.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220202182137, moz:debuggerAddress: localhost:51615, moz:geckodriverVersion: 0.30.0, moz:headless: false, moz:processID: 21988, moz:profile: C:\Users\Zeki Önder\AppData..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:51615/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: ab9372a1-3d63-4ab4-a51a-de2505adba73
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy22.isDisplayed(Unknown Source)
+	at stepdefinitions.N11StepdDefinition.userVerifiesThatTheHomepageIsOpenedAndTheUsernameIsDisplayed(N11StepdDefinition.java:67)
+	at ✽.User verifies that the homepage is opened and the username is displayed(file:///C:/Users/Zeki%20Önder/Desktop/Repository/com.n11/src/test/resources/features/N11.feature:38)
+]]>
+        </failure>
+    </testcase>
+</testsuite>

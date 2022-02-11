@@ -16,7 +16,6 @@ public class N11StepdDefinition {
     N11Page n11Page=new N11Page();
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
     SoftAssert softAssert=new SoftAssert();
-    Actions actions =new Actions(Driver.getDriver());
 
     @Given("User goes to {string} page")
     public void userGoesToPage(String url) throws InterruptedException {
@@ -31,16 +30,14 @@ public class N11StepdDefinition {
 
     @Given("User enters {string} and {string}")
     public void userEntersAnd(String email, String password) {
-        Driver.getDriver().manage().deleteAllCookies();
         js.executeScript("window.scrollBy(0,100)");
-        n11Page.eMailTextbox.sendKeys(email);
-        n11Page.passwordTextbox.sendKeys(password);
+        n11Page.eMailTextbox.sendKeys(ConfigReader.getProperty(email));
+        n11Page.passwordTextbox.sendKeys(ConfigReader.getProperty(password));
     }
 
     @Then("User clicks login button")
     public void userClicksLoginButton()  {
         n11Page.loginButton.click();
-
     }
 
     @And("User verifies login")
@@ -72,7 +69,7 @@ public class N11StepdDefinition {
 
     @Given("User enters {string} at the email textbox and verifies that invalid email warning message is displayed")
     public void userEntersAtTheEmailTextboxAndVerifiesThatInvalidEmailWarningMessageIsDisplayed(String email) {
-        n11Page.eMailTextbox.sendKeys(email);
+        n11Page.eMailTextbox.sendKeys(ConfigReader.getProperty(email));
         n11Page.passwordTextbox.click();
         softAssert.assertTrue(n11Page.emailErrorText.isDisplayed()
                 ,"invalid email message is not displayed");
@@ -82,7 +79,7 @@ public class N11StepdDefinition {
 
     @Then("User enters {string} at the password textbox and verifies that invalid password warning message is displayed")
     public void userEntersAtThePasswordTextboxAndVerifiesThatInvalidPasswordWarningMessageIsDisplayed(String password) {
-        n11Page.passwordTextbox.sendKeys(password);
+        n11Page.passwordTextbox.sendKeys(ConfigReader.getProperty(password));
         n11Page.eMailTextbox.click();
         softAssert.assertTrue(n11Page.passwordErrorText.isDisplayed()
                 ,"invalid email message is not displayed");
@@ -97,7 +94,12 @@ public class N11StepdDefinition {
         softAssert.assertAll();
     }
 
-
+    @Given("User enters wrong {string} and {string}")
+    public void userEntersWrongAnd(String email, String password) {
+        js.executeScript("window.scrollBy(0,100)");
+        n11Page.eMailTextbox.sendKeys(email);
+        n11Page.passwordTextbox.sendKeys(password);
+    }
 }
 
 

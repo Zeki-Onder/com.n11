@@ -4,23 +4,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.support.ui.FluentWait;
-
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
     static private WebDriver driver;
-
 
     public static WebDriver getDriver() {
         if(driver==null){
@@ -65,11 +58,8 @@ public class Driver {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(40000,TimeUnit.MILLISECONDS);
 
-
-
         return driver;
     }
-
 
     public static void closeDriver() {
         if (driver!=null){
