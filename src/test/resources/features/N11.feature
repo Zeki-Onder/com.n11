@@ -37,4 +37,3 @@ Feature: System should allow that user to login
     Then  User clicks login button
     Then  User verifies that the homepage is opened and the username is displayed
     And   User closes the page
-

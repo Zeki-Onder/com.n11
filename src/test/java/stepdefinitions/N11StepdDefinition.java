@@ -1,11 +1,9 @@
 package stepdefinitions;
 
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 import pages.N11Page;
 import utilities.ConfigReader;
@@ -49,7 +47,8 @@ public class N11StepdDefinition {
     @And("User verifies login failed")
     public void userVerifiesLoginFailed() {
         System.out.println("Goruntulenen yazi: "+n11Page.loginErrorText.getText());
-        softAssert.assertTrue(n11Page.loginErrorText.getText().equals("E-posta adresiniz veya şifreniz hatalı"),"Error text element can not be displayed");
+        softAssert.assertTrue(n11Page.loginErrorText.getText().equals("E-posta adresiniz veya şifreniz hatalı"),
+                "Error text element can not be displayed");
         softAssert.assertAll();
     }
 
@@ -59,13 +58,13 @@ public class N11StepdDefinition {
     }
 
     @And("User verifies that the homepage is opened and the username is displayed")
-    public void userVerifiesThatTheHomepageIsOpenedAndTheUsernameIsDisplayed() {
+    public void userVerifiesThatTheHomepageIsOpenedAndTheUsernameIsDisplayed() throws InterruptedException {
+        Thread.sleep(4000);
         softAssert.assertTrue(Driver.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("expectedUrl")),
                 "homepage is not opened");
         softAssert.assertTrue(n11Page.user.isDisplayed(),"Username is not displayed");
         softAssert.assertAll();
     }
-
 
     @Given("User enters {string} at the email textbox and verifies that invalid email warning message is displayed")
     public void userEntersAtTheEmailTextboxAndVerifiesThatInvalidEmailWarningMessageIsDisplayed(String email) {
